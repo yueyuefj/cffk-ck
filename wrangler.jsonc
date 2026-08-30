@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cffk-ck",
+  "compatibility_date": "2026-03-12",
+  "main": "vike:server-entry",
+  "send_email": [{ "name": "EMAIL" }],
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "cffk_db",
+    "migrations_dir": "database/migrations","database_id": "ecc25c77-22b1-4404-a6e3-e1613a2182fa"
+  }],
+  "compatibility_flags": ["nodejs_compat","global_fetch_strictly_public"],
+  "triggers": { "crons": ["* * * * *"] },
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 }
+}
